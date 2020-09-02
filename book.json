@@ -1,11 +1,19 @@
-{ "plugins" : [ "terminal" ] }
-
 {
-  "pluginsConfig": {
-    "terminal": {
-      "copyButtons": false,
-      "fade": false,
-      "style": "white",
+  "plugins": ["prism", "-highlight"]
+}
+
+"pluginsConfig": {
+  "prism": {
+    "css": [
+      "prismjs/themes/prism-tomorrow.css"
+    ]
+  }
+}
+
+"pluginsConfig": {
+  "prism": {
+    "lang": {
+      "flow": "typescript"
     }
   }
 }
