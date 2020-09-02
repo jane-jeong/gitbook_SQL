@@ -1,12 +1,10 @@
 # JOIN - LEFT OUTER JOIN
 
-## OUTER JOIN 
+## OUTER JOIN
 
 조인 조건의 컬럼의 값들이 서로 일치하는 경우 또는 조인조건의 일치되지 않은 값들도 출력해줄때 사용 -\(+\)
 
-### 1\) ANSI 표준 
-
-
+### 1\) ANSI 표준
 
 ### 2\) ORACLE
 

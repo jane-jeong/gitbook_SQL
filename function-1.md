@@ -1,6 +1,6 @@
 # 날짜 함수
 
-## 날짜 계산하기 
+## 날짜 계산하기
 
 * date + number = 날짜
 * date - number = 날짜
@@ -47,7 +47,7 @@ FROM dual;
 SELECT sysdate, 
 to_char(sysdate+10/24+10/(24*60)+10/(24*60*60), 
 'yyyy-mm-dd hh24:mi:ss.sssss')
-FROM dual; 
+FROM dual;
 ```
 
 * 날짜에서 날짜 빼기 - ROUND\(날짜-날짜\)
@@ -55,7 +55,6 @@ FROM dual;
 ```text
 SELECT round(sysdate-hire_date+1, 0) "근무일수"
 FROM employees;
-
 ```
 
 * MONTHS\_BETWEEN: 두 날짜 간의 달수를 리턴하는 함수
@@ -71,9 +70,8 @@ FROM employees;
 
 ```text
 SELECT sysdate, add_months(sysdate, 1),
-			 add_months(sysdate, -1) 
+             add_months(sysdate, -1) 
 FROM dual;
-			
 ```
 
 * TO\_DATE 형변환 함수 활용 - 직접 날짜 넣어서 비교하기
@@ -104,10 +102,10 @@ SELECT last_day(sysdate)
 FROM dual;
 
 SELECT last_day(to_date('2020-02-01', 'yyyy-mm-dd'))
-FROM dual; 
+FROM dual;
 ```
 
-## 날짜 ROUND / TRUNC 함수 
+## 날짜 ROUND / TRUNC 함수
 
 * ROUND\(기준일, 'month'\): 달을 기준으로, 일을 보고 반올림
 
@@ -132,7 +130,7 @@ FROM dual;
 
 SELECT ROUND(to_date('2020-07-16','yyyy-mm-dd'),'year')
 FROM dual;
---7월부터는 다음 해 1월 1일로 
+--7월부터는 다음 해 1월 1일로
 ```
 
 * TRUNC\(날짜, 'month'\): 그 달의 1일로 반환하는 함수
@@ -141,6 +139,6 @@ FROM dual;
 ```text
 SELECT trunc(to_date('2020-06-16','yyyy-mm-dd'),'year')
 from dual;
---결과: 20/01/01 
+--결과: 20/01/01
 ```
 

@@ -1,10 +1,10 @@
 # BASE - TRUE / FALSE
 
-## True / False 
+## True / False
 
 ```text
 SQL(3)_200619
- 
+
 #True or False
 T and T -> T
 T and F -> F

@@ -1,22 +1,20 @@
 # DDL - CREATE TABLE
 
-## CREATE TABLE : 테이블 생성 
+## CREATE TABLE : 테이블 생성
 
-### CREATE TABLE 기본 SYNTAX  
+### CREATE TABLE 기본 SYNTAX
 
 {% tabs %}
 {% tab title="CREATE TABLE 1" %}
 ```sql
 Create Table EMP  --생성되는 테이블명은 영문자로 시작 
 ( 
-	empno number(10) primary key --empno 컬럼을 기본키로 지정 
-	ename varchar2(20), --데이터타입을 지정. Number는 숫자, varchar2는 가변길이 문자 
-	sal number(6)
+    empno number(10) primary key --empno 컬럼을 기본키로 지정 
+    ename varchar2(20), --데이터타입을 지정. Number는 숫자, varchar2는 가변길이 문자 
+    sal number(6)
 ); 
 
---empno, ename, sal은 컬럼명 
-
-
+--empno, ename, sal은 컬럼명
 ```
 {% endtab %}
 
@@ -41,7 +39,7 @@ tablespace user;       --tablespace 사용할테이블스페이스명
 {% endtab %}
 {% endtabs %}
 
-### COLUMN DATA TYPE 
+### COLUMN DATA TYPE
 
 {% hint style="info" %}
 * number\(p, s\): 가변 길이 숫자 타입 \(p: 전체자리수, s:소수점자리수\)
@@ -57,7 +55,7 @@ tablespace user;       --tablespace 사용할테이블스페이스명
 * date: 날짜 데이터 타입
 {% endhint %}
 
-### NULL 값 대신 DEFAULT 값 입력되도록 설정하는 법 
+### NULL 값 대신 DEFAULT 값 입력되도록 설정하는 법
 
 ```sql
 CREATE TABLE emp 
@@ -70,7 +68,7 @@ day date default sysdate
 tablespace users;
 ```
 
-### CONSTRAINT : 제약 조건 사용하기 
+### CONSTRAINT : 제약 조건 사용하기
 
 ```sql
 Create Table EMP(
@@ -80,8 +78,8 @@ Create Table EMP(
     deptno varchar2(4) not null, 
     createdate date default sysdate, 
     constraint emppk primary key(empno)
-		consraint deptfk forign key(deptno) 
-										references dept(deptno)); --DEPT 테이블이 마스터 테이블이 됨 
+        consraint deptfk forign key(deptno) 
+                                        references dept(deptno)); --DEPT 테이블이 마스터 테이블이 됨
 ```
 
 ### CASCADE : 참조 관계가 있을 경우 참조되는 데이터도 자동으로 삭제할 수 있는 옵션 사용
@@ -90,26 +88,26 @@ Create Table EMP(
 --우선 마스터 테이블이 될 DEPT 테이블을 만들고 인스턴스(데이터)를 두 개 입력한다 
 CREATE TABLE DEPT 
 ( 
-	deptno varchar2(4) primary key, 
-	deptname varchar2(20)
+    deptno varchar2(4) primary key, 
+    deptname varchar2(20)
 ); 
 
 INSERT INTO DEPT VALUES ('1000','인사팀'); 
-INSERT INTO DEPT VALUES ('1001','총무팀'); 	
+INSERT INTO DEPT VALUES ('1001','총무팀');
 ```
 
 ```sql
 --ON DELETE CASACDE 옵션 사용해서 EMP 테이블을 생성한다 
 CREATE TABLE EMP (
-	empno number(10), 
-	ename varchar2(20), 
-	sal number(10,2) default 0, 
-	deptno varchar2(4) not null, 
-	createdate date default sysdate,
+    empno number(10), 
+    ename varchar2(20), 
+    sal number(10,2) default 0, 
+    deptno varchar2(4) not null, 
+    createdate date default sysdate,
     constraint emppk primary key(empno),
     constraint deptfk foreign key(deptno) 
             references dept(deptno)
-        	ON DELETE CASCADE 
+            ON DELETE CASCADE 
 );
 
 INSERT INTO EMP VALUES (100, '정재은', 1000, '1000', sysdate); 
@@ -121,7 +119,7 @@ INSERT INTO EMP VALUES (101, '을지문덕', 2000, '1001', sysdate);
 ```text
 DELETE FROM DEPT WHERE DEPTNO='1000'; 
 SELECT * FROM EMP; 
-SELECT * FROM DEPT; 
+SELECT * FROM DEPT;
 ```
 
 ON DELETE CASCADE 옵션은 자신\(EMP\)이 참조하고 있는 테이블\(DEPT\)이 삭제되면 자동으로 자신도 삭제되는 옵션이다. 이 옵션을 사용하면 참조 무결성을 준수할 수 있다.

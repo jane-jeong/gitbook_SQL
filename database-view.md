@@ -12,7 +12,7 @@
 
 ```text
 CREATE VIEW V_EMP AS 
-	SELECT * FROM EMP; 
+    SELECT * FROM EMP;
 ```
 
 ## 뷰 조회 : SELECT \* FROM V\_EMP
@@ -20,7 +20,7 @@ CREATE VIEW V_EMP AS
 SELECT 문 사용해서 테이블 조회하듯이 뷰 조회하면 된다.
 
 ```text
-SELECT * FROM V_EMP; 
+SELECT * FROM V_EMP;
 ```
 
 ## 뷰 삭제 : DROP VIEW V\_EMP
@@ -31,14 +31,14 @@ SELECT * FROM V_EMP;
 DROP VIEW V_EMP ;
 ```
 
-#### 뷰의 장점
+### 뷰의 장점
 
 * 특정 컬럼만 조회할 수 있기 때문에 보안 기능이 있음
 * 데이터 관리가 간단해짐
 * SELECT 문이 간단해짐
 * 하나의 테이블에 여러 개의 뷰를 생성할 수 있음
 
-#### 뷰의 단점
+### 뷰의 단점
 
 * 뷰는 독자적인 인덱스를 만들 수 없음
 * 삽입, 수정, 삭제 연산이 제약됨

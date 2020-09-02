@@ -4,7 +4,7 @@ description: key 컬럼이 일치되는 것을 이용해 테이블을 연결한�
 
 # JOIN - INNER JOIN \(EQUI\)
 
-## EQUI\(등가\) 조인 
+## EQUI\(등가\) 조인
 
 * 조인은 여러 개의 릴레이션
 
@@ -49,6 +49,4 @@ AND l.country_id = c.country_id
 AND e.last_name like '%i%'; 
 --비 조인 조건 술어
 ```
-
-
 

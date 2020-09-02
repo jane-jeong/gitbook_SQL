@@ -1,17 +1,17 @@
 # BASE - SQL
 
-## Reference Tutorial Site 
+## Reference Tutorial Site
 
 1. W3 School - [https://www.w3schools.com/sql/](https://www.w3schools.com/sql/)
 2. SQL tutorials - [https://www.sqltutorial.org/](https://www.sqltutorial.org/)
 
 ## What is SQL? \(1\)
 
-SQL은 Structured Query Language의 줄임말이다. 데이터베이스에 '질문'을 하기 위한 언어인데, 모든 사람이 공통의 규칙을 가지고 컴퓨터에게 질문을 할 수 있도록 언어를 구조화해서 잘 만들었다는 의미로 해석하면 되겠다. 
+SQL은 Structured Query Language의 줄임말이다. 데이터베이스에 '질문'을 하기 위한 언어인데, 모든 사람이 공통의 규칙을 가지고 컴퓨터에게 질문을 할 수 있도록 언어를 구조화해서 잘 만들었다는 의미로 해석하면 되겠다.
 
-가장 많이 쓰이는 언어가 데이터베이스에 원하는 조건의 데이터를 요청\(Querying\)하는 SELECT 문이기 때문에 Query Language라고 이름을 붙인 듯하다. 하지만 데이터를 조회하는 것뿐만 아니라 SQL 언어는 데이터를 조작하고, 데이터와 데이터베이스를 관리할 수 있는 거의 모든 기능을 모두 수행할 수 있다. 
+가장 많이 쓰이는 언어가 데이터베이스에 원하는 조건의 데이터를 요청\(Querying\)하는 SELECT 문이기 때문에 Query Language라고 이름을 붙인 듯하다. 하지만 데이터를 조회하는 것뿐만 아니라 SQL 언어는 데이터를 조작하고, 데이터와 데이터베이스를 관리할 수 있는 거의 모든 기능을 모두 수행할 수 있다.
 
-기능의 성격을 기준으로 DML, DDL, DCL, TCL 등으로 언어의 종류를 구분하곤 한다. SQL 언어의 종류는 아래처럼 정리할 수 있다. 
+기능의 성격을 기준으로 DML, DDL, DCL, TCL 등으로 언어의 종류를 구분하곤 한다. SQL 언어의 종류는 아래처럼 정리할 수 있다.
 
 * DML은 Data Manipulation Language의 줄임말이다. 말그대로 데이터를 조작하는 것이다. 즉, 데이터를 조회하는 SELECT, 데이터를 삽입하는 INSERT, 데이터를 삭제하는 DELETE 구문이 있다. 
 * DDL은 Data Definition Language의 줄임말이다. 테이블을 생성하는 CREATE, 테이블 정보를 변경하는 ALTER 등의 구문이 있다. 
@@ -26,7 +26,7 @@ SQL은 Structured Query Language의 줄임말이다. 데이터베이스에 '질�
 * SQL은 데이터베이스에 접속하고 조작할 수 있도록 해준다.
 * SQL은1986년 ANSI\(American National Standards Institute\)의 표준이되었고, 1987년에는 ISO\(International Organization for Standardization\) 표준이 되었다.
 
-## What Can do SQL do? 
+## What Can do SQL do?
 
 * SQL은 데이터베이스에 질의를 수행한다.
 * SQL은 데이터베이스로부터 데이터를 불러온다/검색한다\(retrieve\).
@@ -48,7 +48,7 @@ SQL은 Structured Query Language의 줄임말이다. 데이터베이스에 '질�
 * 원하는 데이터를 불러오기 위해 SQL을 사용해야 한다.
 * 페이지를 꾸미기 위해서 HTML / CSS 언어를 사용해야 한다.
 
-## 데이터베이스의 개념 
+## 데이터베이스의 개념
 
 사무 계산을 할 경우 각각의 업무 전용 데이터 파일을 사용하고 있지만 각 파일에는 중복된 정보가 들어 있는 것이 많다. 이 중복을 피하기 위하여 정보를 일원화하여 처리를 효율적으로 하기 위해서 서로 관련성을 가지며 중복이 없는 데이터의 집합을 데이터 베이스라 한다. 복수 업무에 공통으로 나타나는 데이터를 중심으로 모아서 이들을 상호 유기적으로 결합한 것. 이들 데이터에는 일정한 규칙에 따라 연결하여 이용할 수 있도록 되어 있다. 종래의 업무마다 독립된 파일 처리 바익에 비하여 업무가 확대되어도 새롭게 파일을 준비할 필요가 없고, 각 파일에 같은 데이터가 중복되어 있지 않게 되는 것 등의 이점이 있다. 데이터 베이스를 관리하는 시스템을 데이터 베이스 관리 시스템이라 한다.
 

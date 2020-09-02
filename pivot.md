@@ -1,6 +1,6 @@
 # PIVOT
 
-## PIVOT : 행 데이터를 컬럼으로 변경하는 함수 
+## PIVOT : 행 데이터를 컬럼으로 변경하는 함수
 
 ```text
 SELECT * 

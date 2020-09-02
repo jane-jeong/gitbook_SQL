@@ -4,7 +4,7 @@ description: 'CONNECT BY : 계층형 조회 서브쿼리'
 
 # CONNECT BY
 
-## CONNECT BY 
+## CONNECT BY
 
 * 케이스1: 인사팀에서 사원 DB를 관리하고 있다. 임직원 간의 관리자 계층구조를 파악하려고 한다. 즉, 특정 관리자 밑으로 어떻게 사원 계층구조가 만들어져있는지 확인하거나, 특정 임직원 위로 직속 상사 계층구조가 어떻게 만들어져있는지 확인하는 것이다. 이러한 계층구조를 파악할 때 CONNECT BY절과 START WITH절이 사용된다.
 * 케이스2: 온라인 쇼핑몰에서 상품 카테고리의 DB를 만들었다. 그 DB 안의 상품 카테고리의 계층구조를 파악하려고 한다. 즉, 특정 카테고리의 하위 카테고리 계층 구조를 파악하거나, 혹은 특정 카테고리의 상위 카테고리 계층 구조가 어떻게 되는지 확인하고자 하는 것이다. 이때 사용되는 것이 CONNECT BY절과 START WITH절이다.
@@ -20,10 +20,10 @@ CONNECT BY prior employee_id = manager_id ;
 /**
 해석: 바로 전 단계의 employee_id(101번에서 시작)가 manager_id인 사람을 출력한다. 
 (즉, manager_id가 101번인 사원들 = 101번이 매니저인 사람들) 
-	그 중 가장 첫번째 행의 employee_id를 manager_id로 가지고 있는 사람을 출력한다. 
-		그 중 가장 첫번째 행의 employee_id를 manager_id로 가지고 있는 사람을 출력한다. 
-	없으면 다시 manager_id=101번인 사원들 중 두번째 행을 출력한다. 
-		그 중 가장 첫번째의 행의 employee_id를 manager_id로 가지고 있는 사람을 출력한다.
+    그 중 가장 첫번째 행의 employee_id를 manager_id로 가지고 있는 사람을 출력한다. 
+        그 중 가장 첫번째 행의 employee_id를 manager_id로 가지고 있는 사람을 출력한다. 
+    없으면 다시 manager_id=101번인 사원들 중 두번째 행을 출력한다. 
+        그 중 가장 첫번째의 행의 employee_id를 manager_id로 가지고 있는 사람을 출력한다.
   ......반복 ) */
 
 --2) 100번 사원의 상사 계층 구조를 출력해주세요. 
@@ -74,7 +74,7 @@ CONNECT BY category_id = prior mother_category_id
 /** 해석: 10번 카테고리의 상위 카테고리를 찾아. 계속 찾아. 끝날 때까지 ---- */
 ```
 
-## LEVEL 
+## LEVEL
 
 * CONNECT BY절로 계층구조를 보여줄 때, 출력 결과에서 보기 너무 불편하기 때문에. 임의로 레벨 가상 열을 만들어줄 수 있다. 즉, LEVEL은 CONNECT BY와 쌍인 연산자이자 가상 열이다.
 * --LEVEL 개념 --START WITH가 첫번째 레벨 \(레벨1\) --그 다음이 두번째 레벨 \(레벨2\) --그 다음이 세번째 레벨 \(레벨3\) --다시 돌아오게 되면 다시 두번째 레벨 \(레벨2\)
@@ -83,7 +83,7 @@ CONNECT BY category_id = prior mother_category_id
 SELECT LEVEL, employee_id, last_name, manager_id
 FROM employees 
 START WITH employee_id = 101
-CONNECT BY prior employee_id = manager_id ; 
+CONNECT BY prior employee_id = manager_id ;
 ```
 
 ## LEVEL + LPAD 함수
@@ -100,7 +100,7 @@ CONNECT BY prior employee_id = manager_id ;
 시각적으로 계층구조를 표현할 수 있다. */
 ```
 
-## ORDER SIBLINGS BY 
+## ORDER SIBLINGS BY
 
 * 조금 더 보기 좋게 정렬하기 위해, 레벨 구조는 그대로 두면서 그 레벨 안에서 특정 기준을 가지고 정렬시키고 싶을 때 ORDER SIBLINGS BY를 사용한다.
 * ORDER SIBLINGS BY 안에는 LEVEL 개념이 녹아있다. 즉, LEVEL과 쌍인 개념이다.
@@ -117,7 +117,7 @@ ORDER SIBLINGS BY last_name ;
 /** 계층구조는 그대로 유지된 채 같은 레벨 안에서만 
 last_name 알파벳 기준으로 행들이 정렬된다*/
 
---LEVEL 열이 없어도 lpad 안에 level이 들어있어서 결과가 똑같이 실행된다. 
+--LEVEL 열이 없어도 lpad 안에 level이 들어있어서 결과가 똑같이 실행된다.
 ```
 
 ## \[문제\] SQL에서 1부터 100까지 출력해보세요.
@@ -126,6 +126,6 @@ last_name 알파벳 기준으로 행들이 정렬된다*/
 SELECT LEVEL 
 FROM dual 
 START WITH 1 
-CONNECT BY <= 100; 
+CONNECT BY <= 100;
 ```
 

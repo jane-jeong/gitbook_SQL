@@ -9,7 +9,7 @@
 
 ```sql
 UPDATE EMP 
-	SET name = '조조'
+    SET name = '조조'
 WHERE id = 1; 
 
 
@@ -20,10 +20,10 @@ COMMIT; OR ROLLBACK;
 
 예를 들어, 위의 예에서 id = 1 인 직원이 2명이면 두 명의 name은 모두 '조조'로 수정된다
 
-### \[ 문제 \] 오류 디버깅하기 
+### \[ 문제 \] 오류 디버깅하기
 
 ```sql
-# 디버깅 
+# 디버깅
 ```
 
 ## UPDATE : 다른 테이블에서 데이터 가져와서 내 테이블 업데이트하기
@@ -36,8 +36,8 @@ UPDATE emp_dept o
 set dept_name = (select department_name 
                 from hr.departments 
                 where department_id = o.dept_id );
-                
-                
+
+
 COMMIT; OR ROLLBACK;
 ```
 
@@ -49,12 +49,10 @@ dw에 넣어 업데이트하기 */
 
 UPDATE dw_emp o 
 SET salary = (SELECT salary*1.1 
-							FROM oltp_emp 
-							WHERE employee_id = o.employee_id) ;
-							
+                            FROM oltp_emp 
+                            WHERE employee_id = o.employee_id) ;
+
 
 COMMIT; OR ROLLBACK;
 ```
-
-
 

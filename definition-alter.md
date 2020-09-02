@@ -8,28 +8,28 @@
 
 ```sql
 ALTER TABLE EMP 
-	    ADD (age number(2) default 1); 
+        ADD (age number(2) default 1);
 ```
 
 ## 2\) 컬럼 변경 : ALTER TABLE ~ MODIFY
 
 ```sql
 ALTER TABLE EMP 
-	    MODIFY (ename varchar2(40) not null);
+        MODIFY (ename varchar2(40) not null);
 ```
 
 ## 3\) 컬럼 삭제 : ALTER TABLE ~ DROP COLUMN
 
 ```sql
 ALTER TABLE EMP 
-    	DROP COLUMN age ; 
+        DROP COLUMN age ;
 ```
 
 ## 4\) 컬럼명 변경 : ALTER TABLE ~ RENAME COLUMN ~ TO
 
 ```sql
 ALTER TABLE EMP 
-    	RENAME COLUMN ename to new_ename ; 
+        RENAME COLUMN ename to new_ename ;
 ```
 
 ## 5\) NOLOGGING 옵션 사용
@@ -41,8 +41,6 @@ ALTER TABLE EMP
 
 ```sql
 --로그파일의 기록을 최소화하여 입력 성능을 향상시킨다. 
-ALTER TABLE emp NOLOGGING; 
+ALTER TABLE emp NOLOGGING;
 ```
-
-
 

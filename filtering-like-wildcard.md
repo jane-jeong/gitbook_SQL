@@ -109,11 +109,11 @@ FROM employees
 WHERE last_name not like 'K%';
 ```
 
-## NOT LIKE : 특정 문자 패턴을 포함하지 않는 데이터 출력하기 
+## NOT LIKE : 특정 문자 패턴을 포함하지 않는 데이터 출력하기
 
 ```text
 SELECT *
 FROM employees
-WHERE last_name not like 'K%'; 
+WHERE last_name not like 'K%';
 ```
 

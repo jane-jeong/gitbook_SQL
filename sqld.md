@@ -1,6 +1,6 @@
 # BASE - INSTALL & SETTING
 
-## 오라클 SQLD 설치하기 
+## 오라클 SQLD 설치하기
 
 ### **1\) java \(jdk\) 설치**
 
@@ -63,12 +63,12 @@ GRANT CREATE SESSION, CREATE TABLE, CREATE SEQUENCE, CREATE VIEW TO (계정이�
 -- 사용자 계정에 테이블 공간 설정 
 ALTER USER (계정이름) default tablespace users ; 
 -- 테이블 공간에 쿼터 할당
-ALTER USER (계정이름) quota unlimited on users ; 
+ALTER USER (계정이름) quota unlimited on users ;
 ```
 
-## QUICK START 
+## QUICK START
 
-### 1\) 생성되어 있는 테이블/뷰 확인하기 
+### 1\) 생성되어 있는 테이블/뷰 확인하기
 
 TNAME, TABTYPE\(TABLE or VIEW\), CLUSTERID를 확인할 수 있다.
 
@@ -77,16 +77,16 @@ SELECT *
 FROM tab;
 ```
 
-### 2\) 테이블 생성하기 : CREATE TABLE 
+### 2\) 테이블 생성하기 : CREATE TABLE
 
 ```text
 --테이블 생성 
 
 CREATE TABLE fruit (
-	id varchar2(20) primary key, --아이디 (id가 프라이머리 키)
-	name varchar2(10) not null,  --이름
-	age number not null,         --나이
-	email varchar2(40)           --이메일
+    id varchar2(20) primary key, --아이디 (id가 프라이머리 키)
+    name varchar2(10) not null,  --이름
+    age number not null,         --나이
+    email varchar2(40)           --이메일
 ) ;
 
 CREATE TABLE Persons (
@@ -97,11 +97,11 @@ CREATE TABLE Persons (
 );
 ```
 
-### 3\) 테이블 삭제 : DROP TABLE 
+### 3\) 테이블 삭제 : DROP TABLE
 
 ```text
 --테이블 삭제
-DROP TABLE fruit purge ; 
+DROP TABLE fruit purge ;
 ```
 
 ### 4\) 데이터 추가 : INSERT
@@ -120,7 +120,7 @@ INSERT INTO fruit values
 --데이터 수정
 --name을 정효경에서 정재은으로 수정하기
 UPDATE fruit set name='정재은' 
-WHERE name='정효경' ; 
+WHERE name='정효경' ;
 ```
 
 ### 6\) 데이터 삭제 : DELETE
@@ -129,8 +129,4 @@ WHERE name='정효경' ;
 --테이블에서 1개 행 삭제하기 
 DELETE fruit where id='jane';
 ```
-
-
-
-
 

@@ -1,6 +1,6 @@
 # FILTERING - IN
 
-## IN : 각 목록의 값과 일치하는 값을 찾는 연산자 
+## IN : 각 목록의 값과 일치하는 값을 찾는 연산자
 
 * IN 연산자는 OR의 의미를 가지고 있어서 하나의 조건만 만족해도 조회된다. 
 * 단, IN 연산자는 성능이 좋지는 않은 편. 
@@ -41,7 +41,7 @@ WHERE employee_id between 100 and 102;
 {% endtab %}
 {% endtabs %}
 
-## NOT IN : 리스트에 있는 값 제외하고 출력하는 연산자 
+## NOT IN : 리스트에 있는 값 제외하고 출력하는 연산자
 
 * IN이 OR의 의미를 포함하는 것과 반대로, NOT IN은 AND의 의미를 포함하고 있다. 
 
@@ -55,7 +55,7 @@ WHERE employee_id NOT IN (100,101,102);
 {% endtab %}
 {% endtabs %}
 
-## IN 문에 여러 컬럼 사용하기 
+## IN 문에 여러 컬럼 사용하기
 
 {% tabs %}
 {% tab title="IN 조건에 여러 컬럼 지정하기" %}
@@ -63,7 +63,7 @@ WHERE employee_id NOT IN (100,101,102);
 SELECT * 
 FROM emp 
 WHERE job_id, last_name 
-IN (('ST_CLERK', 'King'), ('SA_SAP', 'James')) ; 
+IN (('ST_CLERK', 'King'), ('SA_SAP', 'James')) ;
 ```
 {% endtab %}
 {% endtabs %}

@@ -8,10 +8,9 @@
 {% tabs %}
 {% tab title="REVOKE 기본 문법" %}
 ```sql
-
 REVOKE SELECT, INSERT, UPDATE, DELETE --권한
 ON employees
-FROM hr ; 
+FROM hr ;
 ```
 {% endtab %}
 {% endtabs %}

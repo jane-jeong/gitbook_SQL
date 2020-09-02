@@ -1,6 +1,6 @@
 # FILTERING - AND, OR, NOT
 
-## NOT : 조건에 해당되지 않는 것을 조회할 때 
+## NOT : 조건에 해당되지 않는 것을 조회할 때
 
 ```text
 --not in 

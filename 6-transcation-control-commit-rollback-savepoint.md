@@ -10,7 +10,7 @@
 * 커밋을 실행하면 하나의 트랜잭션 과정을 종료한다.
 
 ```sql
-commit ; 
+commit ;
 ```
 
 {% hint style="info" %}
@@ -28,7 +28,7 @@ commit ;
 * ROLLBACK을 실행하면 LOCK이 해제되고 다른 사용자도 데이터베이스 행을 조작할 수 있다.
 
 ```sql
-rollback; 
+rollback;
 ```
 
 ## SAVEPOINT

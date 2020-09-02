@@ -1,6 +1,6 @@
 # CONDITIONAL - CASE
 
-## 조건제어 함수 - CASE 
+## 조건제어 함수 - CASE
 
 * CASE문은 IF ... THEN ... ELSE - END의 프로그래밍 언어처럼 조건문을 사용할 수 있다. 
 * 조건을 WHEN구에 사용하고 THEN은 해당 조건이 참이면 실행되고 거짓이면 ELSE구가 실행된다.
@@ -23,7 +23,7 @@ SELECT CASE
         WHEN employee_id = 101 THEN 'B' 
         ELSE 'C'
     END
-FRM emp ; 
+FRM emp ;
 ```
 {% endtab %}
 {% endtabs %}
@@ -69,6 +69,6 @@ CASE when salary < 5000 then 'low'
 END "qualified salary"
 FROM employees
 ORDER BY salary ASC;
---order by 열 DESC (FROM 뒤에) : 내림차순 
+--order by 열 DESC (FROM 뒤에) : 내림차순
 ```
 

@@ -31,14 +31,14 @@ COMMIT; OR ROLLBACK;
 
 ```sql
 SELECT TABLE NAME, MAX EXTENTS 
-FROM USER_TABLES ; 
+FROM USER_TABLES ;
 ```
 
-### 참고: TRUNCATE TABLE 
+### 참고: TRUNCATE TABLE
 
 * TRUNCATE TABLE은 테이블의 모든 데이터를 삭제하는 동시에, 데이터가 제거되면 테이블의 용량을 초기화한다. 
 
 ```sql
-TRUNCATE TABLE EMP ; 
+TRUNCATE TABLE EMP ;
 ```
 

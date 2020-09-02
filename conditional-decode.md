@@ -13,7 +13,7 @@
 ```sql
 SELECT DECODE(employee_id, 100, 'TRUE', 'FALSE') 
 FROM employees ; 
---employee_id가 100과 같으면 'TRUE'를 리턴하고, 같지 않으면 'FALSE'를 리턴 
+--employee_id가 100과 같으면 'TRUE'를 리턴하고, 같지 않으면 'FALSE'를 리턴
 ```
 
 ```sql

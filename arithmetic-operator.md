@@ -4,25 +4,25 @@ description: Arithmetic Operator
 
 # SELECT - 산술연산자
 
-## 산술연산자 쓰기 
+## 산술연산자 쓰기
 
 ### 1\) 사칙연산이 모두 가능한 건 NUMBER 타입만 가능하다
 
 ```text
 SELECT salary*12, salary/12, salary+100, salary-100
-FROM employees ; 
+FROM employees ;
 ```
 
-### 2\) DATE 타입은 더하기와 빼기만 가능하다 
+### 2\) DATE 타입은 더하기와 빼기만 가능하다
 
 ```text
 SELECT hire_date+100, hire_date-100 
-FROM employees ; 
+FROM employees ;
 ```
 
 ### 3\) 문자\(CHAR, VARCHAR2\) 타입은 사칙연산 불가
 
-### 4\) 연산자 우선순위 
+### 4\) 연산자 우선순위
 
 1. 곱하기와 나누기 \( \* , / \) 
 2. 더하기와 빼기 \( +, - \)

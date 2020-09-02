@@ -2,18 +2,18 @@
 
 ## 단일행 함수 - 문자 함수 \(15개\)
 
-### 1\) upper : 대문자 변환 함수 
+### 1\) upper : 대문자 변환 함수
 
-### 2\) lower : 소문자 변환 함수 
+### 2\) lower : 소문자 변환 함수
 
-### 3\) initcap : 첫글자는 대문자, 나머지는 소문자로 변환하는 함수 
+### 3\) initcap : 첫글자는 대문자, 나머지는 소문자로 변환하는 함수
 
 ### 4\) concat : 연결연산자와 동일한 기능. 2개만 연결.
 
 ```text
 --concat
 SELECT last_name||first_name, 
-			 lower(concat(last_name,first_name))
+             lower(concat(last_name,first_name))
 FROM employees;
 ```
 
@@ -31,7 +31,7 @@ FROM dual;
 
 ```text
 SELECT lengthb('빅데이터'), lengthb('bigdata')
-FROM dual ; 
+FROM dual ;
 ```
 
 ### 7\) instr: 문자의 위치를 반환하는 함수
@@ -42,7 +42,7 @@ FROM dual;
 
 SELECT instr('aabccb','b'), instr('aabccb','b'1,2)
 --1: 시작위치
---2: 두번째 나오는 b 찾아 
+--2: 두번째 나오는 b 찾아
 ```
 
 ### 8\) substr: 문자를 추출하는 함수
@@ -65,7 +65,7 @@ FROM employees;
 SELECT substrb('가나다라마', 1, 6)
 FROM dual ; 
 --1: 첫번째 위치부터 
---6: 6바이트만큼 추출한다 
+--6: 6바이트만큼 추출한다
 ```
 
 ### 10\) trim: 접두, 접미 문자를 자르는 함수. 연속되는 글자 모두 제거됨
@@ -86,7 +86,7 @@ WHERE last_name loke 'K%';
 
 ```text
 SELECT trim('a' from 'aabbca'),
-			 ltrim('aabbca','a'), rtrim('aabbca','a')
+             ltrim('aabbca','a'), rtrim('aabbca','a')
 FROM dual;
 --결과: bbc, bbca, aabbc
 ```
