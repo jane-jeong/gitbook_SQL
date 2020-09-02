@@ -56,6 +56,7 @@
 * [GROUP BY ROLLUP](grouping-rollup.md)
 * [GROUP BY CUBE](grouping-cube.md)
 * [GROUP BY GROUPING SETS](grouping-grouping-sets.md)
+* [GROUPING 함수](grouping.md)
 * [FUCTION - 집계함수 종류](aggregate.md)
 * [FUNCTION - COUNT\( \)](aggregate-count.md)
 * [FUNCTION - RANK\( \)](connect-by.md)

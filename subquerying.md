@@ -6,7 +6,7 @@ description: 다중열(다중행) 서브쿼리 - 쌍비교와 비쌍비교
 
 ## 다중열\(다중행\) 서브쿼리 - 쌍비교와 비쌍비교
 
-```text
+```sql
 #쌍비교
 SELECT *
 FROM employees
