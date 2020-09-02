@@ -40,7 +40,7 @@ GROUP BY GROUPING SETS ((department_id, job_id), (job_id, manager_id), (manager_
 {% endtab %}
 {% endtabs %}
 
-![](.gitbook/assets/image%20%282%29.png)
+![](.gitbook/assets/image%20%283%29.png)
 
-![...&#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%287%29.png)
+![...&#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%288%29.png)
 

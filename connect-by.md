@@ -49,7 +49,7 @@ SELECT last_name, salary, job_id, RANK() OVER (ORDER BY salary DESC) ALL_RANK,
 FROM employees ;
 ```
 
-![... &#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%286%29.png)
+![... &#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%287%29.png)
 
 ## DENSE\_RANK\( \) 
 
@@ -61,7 +61,7 @@ SELECT last_name, salary, RANK() OVER (ORDER BY salary DESC) RANK,
 FROM employees ;
 ```
 
-![DENSE\_RANK&#xC5D0;&#xB294; 3&#xC704;&#xAC00; &#xC788;&#xB2E4;. &#xC989; &#xBAA8;&#xB4E0; &#xC21C;&#xC704;&#xAC00; &#xC788;&#xB2E4;.](.gitbook/assets/image%20%2813%29.png)
+![DENSE\_RANK&#xC5D0;&#xB294; 3&#xC704;&#xAC00; &#xC788;&#xB2E4;. &#xC989; &#xBAA8;&#xB4E0; &#xC21C;&#xC704;&#xAC00; &#xC788;&#xB2E4;.](.gitbook/assets/image%20%2814%29.png)
 
 ## ROW\_NUMBER\( \) 
 
@@ -74,5 +74,5 @@ SELECT last_name, salary,
 FROM employees ;   
 ```
 
-![&#xB3D9;&#xC77C;&#xD55C; &#xC21C;&#xC704;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xAC01;&#xAC01; &#xACE0;&#xC720;&#xC758; &#xB85C;&#xC6B0; &#xB118;&#xBC84;&#xB97C; &#xBD80;&#xC5EC;&#xD574;&#xC900;&#xB2E4;](.gitbook/assets/image%20%2810%29.png)
+![&#xB3D9;&#xC77C;&#xD55C; &#xC21C;&#xC704;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xAC01;&#xAC01; &#xACE0;&#xC720;&#xC758; &#xB85C;&#xC6B0; &#xB118;&#xBC84;&#xB97C; &#xBD80;&#xC5EC;&#xD574;&#xC900;&#xB2E4;](.gitbook/assets/image%20%2811%29.png)
 
