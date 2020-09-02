@@ -6,9 +6,9 @@ description: 자신의 테이블을 참조할 때 사용하는 조인 방식
 
 ## SELF JOIN
 
-자신의 테이블을 참조할 때 사용하는 조인 방식이다.
+자신의 테이블을 참조할 때 사용하는 조인 방식이다. 각기 다른 테이블 별칭을 사용한다. 
 
-```text
+```sql
 --1
 SELECT employee_id, last_name, manager_id
 FROM employees e;

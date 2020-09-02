@@ -2,7 +2,7 @@
 description: key 컬럼이 일치되는 것을 이용해 테이블을 연결한다.
 ---
 
-# JOIN - INNER JOIN \(EQUI\)
+# JOIN - EQUI JOIN
 
 ## EQUI\(등가\) 조인
 
@@ -29,12 +29,6 @@ WHERE e.department_id = d.department_id ;
 --스토리지 절약하고 성능 높이기 위해 별칭 사용해준다. 
 --테이블 뒤에 별칭 붙이면 된다
 --SELECT 문에서의 컬럼에도 컬럼 앞에 접두어 붙여주면 더 빨리 찾아갈 수 있다. 주소 바로 붙여주는 것. 
---결과: 106건 나옴
-
---테이블 별칭 사용
-SELECT employee_id, department_name
-FROM employees e, departments d
-WHERE e.department_id = d.department_id;
 
 SELECT employee_id, department_name
 FROM employees e, departments d
