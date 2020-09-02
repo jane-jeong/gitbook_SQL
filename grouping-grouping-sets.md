@@ -42,5 +42,5 @@ GROUP BY GROUPING SETS ((department_id, job_id), (job_id, manager_id), (manager_
 
 ![](.gitbook/assets/image%20%282%29.png)
 
-![...&#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%286%29.png)
+![...&#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%287%29.png)
 
