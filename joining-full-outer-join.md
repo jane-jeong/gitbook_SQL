@@ -1,0 +1,2 @@
+# JOIN - FULL OUTER JOIN
+
