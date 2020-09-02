@@ -6,10 +6,15 @@ description: 'CONNECT BY : 계층형 조회 서브쿼리'
 
 ## CONNECT BY
 
-* 케이스1: 인사팀에서 사원 DB를 관리하고 있다. 임직원 간의 관리자 계층구조를 파악하려고 한다. 즉, 특정 관리자 밑으로 어떻게 사원 계층구조가 만들어져있는지 확인하거나, 특정 임직원 위로 직속 상사 계층구조가 어떻게 만들어져있는지 확인하는 것이다. 이러한 계층구조를 파악할 때 CONNECT BY절과 START WITH절이 사용된다.
-* 케이스2: 온라인 쇼핑몰에서 상품 카테고리의 DB를 만들었다. 그 DB 안의 상품 카테고리의 계층구조를 파악하려고 한다. 즉, 특정 카테고리의 하위 카테고리 계층 구조를 파악하거나, 혹은 특정 카테고리의 상위 카테고리 계층 구조가 어떻게 되는지 확인하고자 하는 것이다. 이때 사용되는 것이 CONNECT BY절과 START WITH절이다.
+CONNECT BY는 계층형으로 데이터를 조회할 수 있는 것으로, ORACLE 데이터베이스에서 지원한다. 계층형 조회란, 예를 들어 상위 부장에서 차장, 차장에서 과장, 과장에서 대리, 대리에서 사원 순으로 트리 형태의 구조를 탐색하면서 조회하는 것이다. 역방향도 가능하다. 
 
-```text
+CONNECT BY는 트리\(TREE\) 형태의 구조로 질의를 수행하는 것으로 START WITH 구는 시작 조건을 의미하고 CONNECT BY PRIOR은 조인 조건이다. ROOT 노드로부터 하위 노드의 질의를 실행한다. 
+
+
+
+* 케이스1: 인사팀에서 사원 DB를 관리하고 있다. 임직원 간의 관리자 계층구조를 파악하려고 한다. 즉, 특정 관리자 밑으로 어떻게 사원 계층구조가 만들어져있는지 확인하거나, 특정 임직원 위로 직속 상사 계층구조가 어떻게 만들어져있는지 확인하는 것이다. 이러한 계층구조를 파악할 때 CONNECT BY절과 START WITH절이 사용된다.
+
+```sql
 --CASE1 임직원 계층구조 파악하기 
 
 --1) employee_id가 101번인 사원의 부하 직원의 계층구조를 출력해주세요.
@@ -40,7 +45,9 @@ employee_id가 a인 사람의 매니저 아이디가 사원번호인 사람= a�
 */
 ```
 
-```text
+* 케이스2: 온라인 쇼핑몰에서 상품 카테고리의 DB를 만들었다. 그 DB 안의 상품 카테고리의 계층구조를 파악하려고 한다. 즉, 특정 카테고리의 하위 카테고리 계층 구조를 파악하거나, 혹은 특정 카테고리의 상위 카테고리 계층 구조가 어떻게 되는지 확인하고자 하는 것이다. 이때 사용되는 것이 CONNECT BY절과 START WITH절이다.
+
+```sql
 --쇼핑몰 FRONTEND에서는 카테고리 클릭-클릭해서 간단하게 보는데 
 --BACKEND에서는 이런 계층구조로 DB에서 불러오는 SQL 쿼리가 설계되어 있는 것
 --예를 들어, 쿠팡에서 식품-즉석식품,신선식품,어쩌구저쩌구, ~~~ 이렇게 카테고리가 있으면 
@@ -79,7 +86,7 @@ CONNECT BY category_id = prior mother_category_id
 * CONNECT BY절로 계층구조를 보여줄 때, 출력 결과에서 보기 너무 불편하기 때문에. 임의로 레벨 가상 열을 만들어줄 수 있다. 즉, LEVEL은 CONNECT BY와 쌍인 연산자이자 가상 열이다.
 * --LEVEL 개념 --START WITH가 첫번째 레벨 \(레벨1\) --그 다음이 두번째 레벨 \(레벨2\) --그 다음이 세번째 레벨 \(레벨3\) --다시 돌아오게 되면 다시 두번째 레벨 \(레벨2\)
 
-```text
+```sql
 SELECT LEVEL, employee_id, last_name, manager_id
 FROM employees 
 START WITH employee_id = 101
@@ -90,7 +97,7 @@ CONNECT BY prior employee_id = manager_id ;
 
 * 조금 시각적으로 보기 좋게 표현하기 위해 정렬하는 기준 열에서 LPAD를 가지고 자릿수로 LEVEL을 표현해준다.
 
-```text
+```sql
 SELECT LEVEL, lpad(' ',2*level-2,' ')||last_name, manager_id
 FROM employees 
 START WITH employee_id = 101
@@ -105,7 +112,7 @@ CONNECT BY prior employee_id = manager_id ;
 * 조금 더 보기 좋게 정렬하기 위해, 레벨 구조는 그대로 두면서 그 레벨 안에서 특정 기준을 가지고 정렬시키고 싶을 때 ORDER SIBLINGS BY를 사용한다.
 * ORDER SIBLINGS BY 안에는 LEVEL 개념이 녹아있다. 즉, LEVEL과 쌍인 개념이다.
 
-```text
+```sql
 --ORDER SIBLINGS BY 
 
 SELECT LEVEL, lpad(' ',2*level-2,' ')||last_name, manager_id
@@ -120,9 +127,22 @@ last_name 알파벳 기준으로 행들이 정렬된다*/
 --LEVEL 열이 없어도 lpad 안에 level이 들어있어서 결과가 똑같이 실행된다.
 ```
 
+## CONNECT BY 키워드 
+
+계층형 조회에서 최대 계층의 수를 구하기 위한 문제는 MAX\(LEVEL\)을 사용해서 최대 계층 수\(트리의 최대 깊이\)를 구한다. 즉, 계층형 구조에서 마지막 LEAF NODE의 계층 값을 구한다. 
+
+| CONNECT BY 키워드 | 설명 |
+| :--- | :--- |
+| LEVEL | 검색 항목의 깊이를 의미한다. 즉, 계층구조에서 가장 상위 레벨이 1이 된다. |
+| CONNECT\_BY\_ROOT  | 계층 구조에서 가장 최상위 값을 표시한다. \(1로 표시\)  |
+| CONNECT\_BY\_ISLEAF | 계층 구조에서 가장 최하위 값을 표시한다. \(1로 표시\) |
+| SYS\_CONNECT\_BY\_PATH | 계층 구조에서 전체 전개 경로를 표시한다.  |
+| NOCYCLE | 순환 구조가 발생지점까지만 전개된다.  |
+| CONNECT\_BY\_ISCYCLE  | 순환 구조 발생 지점을 표시한다.  |
+
 ## \[문제\] SQL에서 1부터 100까지 출력해보세요.
 
-```text
+```sql
 SELECT LEVEL 
 FROM dual 
 START WITH 1 
