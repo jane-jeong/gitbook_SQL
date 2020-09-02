@@ -2,7 +2,10 @@
 
 ## GROUP BY GROUPING SETS
 
-* GROUP BY GROUPING SETS — 내가 필요한 그룹 조합만 골라서 출력
+* GROUP BY GROUPING SETS — 내가 필요한 그룹 조합만 골라서 출력한다. 
+* GROUP BY GROUPING SETS 함수는 GROUP BY에 나오는 컬럼의 순서와 관계없이 다양한 소계를 만들 수 있다. 
+* 이때, GROUP BY절에서 나열되는 컬럼의 순서와 관계 없이 개별적으로 모두 처리한다. 
+* 즉, 아례 예제 GROUP BY절에서 department\_id와 job\_id의 순서가 바뀌어도 결과는 같다. department\_id별로 합계를 조회하고, job\_id 별로 합계를 각각 조회한다. 즉, 서로 관계 없이 개별적으로 조회되는 것.   
 
 {% tabs %}
 {% tab title="GROUPING SETS의 문형 " %}
