@@ -31,5 +31,5 @@ GROUP BY CUBE (department_id, job_id);
 * 1행 : 전체 합계 
 * 2행 : 
 
-![...&#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%287%29.png)
+![...&#xC774;&#xD558; &#xC0DD;&#xB7B5;](.gitbook/assets/image%20%288%29.png)
 
