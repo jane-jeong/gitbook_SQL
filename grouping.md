@@ -14,5 +14,5 @@ FROM employees
 GROUP BY ROLLUP (department_id, job_id) ; 
 ```
 
-![](.gitbook/assets/image%20%285%29.png)
+![](.gitbook/assets/image%20%286%29.png)
 

@@ -1,4 +1,4 @@
-# FUCTION - 집계함수 종류
+# FUNCTION - 집계함수
 
 ## 집계함수 종류
 
@@ -17,7 +17,7 @@ SELECT last_name, salary,
 FROM employees; 
 ```
 
-![SUM\_MANAGER&#xB294; &#xD589; &#xBCC4;&#xB85C; &#xAC19;&#xC740; &#xAD00;&#xB9AC;&#xC790;&#xC758; &#xAE09;&#xC5EC; &#xD569;&#xACC4;&#xB97C; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;](.gitbook/assets/image%20%282%29.png)
+![SUM\_MANAGER&#xB294; &#xD589; &#xBCC4;&#xB85C; &#xAC19;&#xC740; &#xAD00;&#xB9AC;&#xC790;&#xC758; &#xAE09;&#xC5EC; &#xD569;&#xACC4;&#xB97C; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;](.gitbook/assets/image%20%283%29.png)
 
 ## COUNT 함수
 
