@@ -97,7 +97,7 @@
 * [최적화 - Table Partition](undefined-14.md)
 * [최적화  - Optimizer](optimizer-optimizer.md)
 * [최적화 - Index](database-index.md)
-* [최적화  - 실행계획](optimizer.md)
 * [최적화  - Optimizer Join](optimizer-optimizer-join.md)
+* [최적화  - Execution Plan](optimizer.md)
 * [──────────────](undefined-13.md)
 
