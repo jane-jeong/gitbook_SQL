@@ -94,6 +94,7 @@
 * [모델링 - 관계형 데이터베이스](data-base.md)
 * [모델링 - Constraints](database-constraints.md)
 * [──────────────](undefined-9.md)
+* [테이블 파티션](undefined-14.md)
 * [최적화 - Index](database-index.md)
 * [최적화 - Partition](optimizer-partition.md)
 * [최적화  - Optimizer](optimizer-optimizer.md)
