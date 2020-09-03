@@ -4,7 +4,7 @@
 
 Nested Loop 조인은 하나의 테이블에서 데이터를 먼저 찾고 그 다음 테이블을 조인하는 방식으로 실행된다. 네스티드 룹 조인에서 먼저 조회되는 테이블을 외부 테이블\(Outer Table\)이라 하고 그 다음 조회되는 테이블을 내부 테이블\(Inner Table\)이라고 한다. 네스티드 조인에서는 외부 테이블\(선행 테이블\)의 크기가 작은 것을 먼저 찾는 것이 중요하다. 그래야 데이터가 스캔되는 범위를 줄일 수 있기 때문이다. 네스티드 룹 조인은 RANDOM ACCESS가 발생하는데 랜덤 엑세스가 많이 발생하면 성능이 저하된다. 그러므로 네스티드 룹 조인을 할 때는 랜덤 엑세스의 양을 줄여야 성능이 향상된다. 
 
-![](.gitbook/assets/image%20%2818%29.png)
+![](.gitbook/assets/image%20%2820%29.png)
 
 ### 힌트를 사용한 NESTED LOOP JOIN 예시 
 
@@ -48,4 +48,10 @@ FROM employees e, departments d
 WHERE e.department_id = d.department_id 
 AND e.department_id = 10 ; 
 ```
+
+## NL, SORT MERGE, HASH 조인의 성능 비교 
+
+![&#xCD9C;&#xCC98; : leopard.in.ua/presentations](.gitbook/assets/image%20%2818%29.png)
+
+![](.gitbook/assets/471418_1_en_16_fig2_html.jpg)
 
